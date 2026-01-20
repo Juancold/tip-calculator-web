@@ -1,0 +1,91 @@
+/* Importando uma fonte e resetando estilos básicos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo */
+    padding-top: 50px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Container principal */
+.todo-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    color: #4a4a4a;
+}
+
+/* Seção de input (campo de texto + botão) */
+.input-section {
+    display: flex; /* A MÁGICA! Alinha o input e o botão lado a lado */
+    gap: 10px; /* Espaço entre o input e o botão */
+    margin-bottom: 30px;
+}
+
+#taskInput {
+    flex-grow: 1; /* Faz o input ocupar todo o espaço disponível */
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+#taskInput:focus {
+    outline: none;
+    border-color: #5b99ea; /* Borda azul quando clicado */
+}
+
+#addTaskBtn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #5b99ea; /* Azul */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addTaskBtn:hover {
+    background-color: #4a88d4; /* Azul mais escuro */
+}
+
+/* Estilos para a lista e os itens que vamos criar com JS */
+#taskList {
+    list-style-type: none; /* Remove as bolinhas da lista */
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Joga o texto para um lado e o botão para o outro */
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.task-item:last-child {
+    border-bottom: none; /* Remove a borda do último item */
+}
+
+/* Estilo para quando a tarefa for completada */
+.task-item.completed span {
+    text-decoration: line-through; /* Risca o texto */
+    color: #aaa;
+}
